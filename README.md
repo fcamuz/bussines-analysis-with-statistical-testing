@@ -23,7 +23,7 @@ For the culmination of Module 3, you just need to complete the final project!
 
 For this project, you'll be working with the Northwind database--a free, open-source dataset created by Microsoft containing data from a fictional company. You probably remember the Northwind database from our section on Advanced SQL. Here's the schema for the Northwind database:
 
-<img src='Northwind_ERD.png'>
+<img src='Northwind_ERD_updated.png'>
 
 The goal of this project is to test your ability to gather information from a real-world database and use your knowledge of statistical analysis and hypothesis testing to generate analytical insights that can be of value to the company. 
 
