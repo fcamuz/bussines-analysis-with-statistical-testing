@@ -15,7 +15,7 @@ In this lesson, we'll review all the guidelines and specifications for the final
 
 Another module down--you're half way there!
 
-<img src='halfway-there.gif'>
+<img src='https://raw.githubusercontent.com/learn-co-curriculum/dsc-mod-3-project/master/halfway-there.gif'>
 
 For the culmination of Module 3, you just need to complete the final project!
 
