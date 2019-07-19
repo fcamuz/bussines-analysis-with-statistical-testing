@@ -40,7 +40,7 @@ For this hypothesis, be sure to specify both the **_null hypothesis_** and the *
 To complete this project, you will need to turn in the following 3 deliverables:
 
 1. A **_Jupyter Notebook_** containing any code you've written for this project. 
-2. A **_Blog Post_** explaining your process, methodology, and findings.  
+2. A **_Blog Post_** explaining your process, methodology, and findings in the project or on a technical topic you learned in the module.  
 3. An **_"Executive Summary" PowerPoint Presentation_** that explains the hypothesis tests you ran, your findings, and their relevance to company stakeholders.  
 
 ### Jupyter Notebook Must-Haves
@@ -65,9 +65,8 @@ For this project, your jupyter notebook should meet the following specifications
 
 ### Blog Post Must-Haves
 
-Your blog post should include everything from how you identified what tables contained the information you need, to how you retrieved it using SQL (and any challenges you ran into while doing so), as well as your methodology and results for your hypothesis tests. 
+Refer back to the [Blogging Guidelines](https://github.com/learn-co-curriculum/dsc-welcome-blogging) for the technical requirements and blog ideas.
 
-**_NOTE:_**  This blog post is your way of showcasing the work you've done on this project--chances are it will soon be read by a recruiter or hiring manager! Take the time to make sure that you craft your story well, and clearly explain your process and findings in a way that clearly shows both your technical expertise **_and_** your ability to communicate your results!
 
 ### Executive Summary Must-Haves
 
