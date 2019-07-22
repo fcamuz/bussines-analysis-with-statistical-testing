@@ -3,7 +3,7 @@
 
 ## Introduction
 
-In this lesson, we'll review all the guidelines and specifications for the final project for Module 3. 
+In this lesson, we'll review all the guidelines and specifications for the final project for Module 3.
 
 ## Objectives
 
@@ -25,7 +25,7 @@ For this project, you'll be working with the Northwind database--a free, open-so
 
 <img src='https://raw.githubusercontent.com/learn-co-curriculum/dsc-mod-3-project/master/Northwind_ERD_updated.png'>
 
-The goal of this project is to test your ability to gather information from a real-world database and use your knowledge of statistical analysis and hypothesis testing to generate analytical insights that can be of value to the company. 
+The goal of this project is to test your ability to gather information from a real-world database and use your knowledge of statistical analysis and hypothesis testing to generate analytical insights that can be of value to the company.
 
 ## The Deliverables
 
@@ -33,14 +33,14 @@ The goal of your project is to query the database to get the data needed to perf
 
 **_Does discount amount have a statistically significant effect on the quantity of a product in an order? If so, at what level(s) of discount?_**
 
-In addition to answering this question with a hypothesis test, you will also need to come up with **_at least 3 other hypotheses to test on your own_**.  These can by anything that you think could be imporant information for the company. 
+In addition to answering this question with a hypothesis test, you will also need to come up with **_at least 3 other hypotheses to test on your own_**.  These can by anything that you think could be imporant information for the company.
 
-For this hypothesis, be sure to specify both the **_null hypothesis_** and the **_alternative hypothesis_** for your question.  You should also specify if this is one-tail or a two-tail test. 
+For this hypothesis, be sure to specify both the **_null hypothesis_** and the **_alternative hypothesis_** for your question.  You should also specify if this is one-tail or a two-tail test.
 
 To complete this project, you will need to turn in the following 3 deliverables:
 
-1. A **_Jupyter Notebook_** containing any code you've written for this project. 
-2. A **_Blog Post_** explaining your process, methodology, and findings in the project or on a technical topic you learned in the module.  
+1. A **_Jupyter Notebook_** containing any code you've written for this project.
+2. A **_[Blog Post](https://github.com/learn-co-curriculum/dsc-welcome-blogging)_**.
 3. An **_"Executive Summary" PowerPoint Presentation_** that explains the hypothesis tests you ran, your findings, and their relevance to company stakeholders.  
 
 ### Jupyter Notebook Must-Haves
@@ -61,7 +61,7 @@ For this project, your jupyter notebook should meet the following specifications
 
 * Your notebook should clearly show how you arrived at your results for each hypothesis test, including how you calculated your p-values.   
 <br>
-* You should also include any other statistics that you find relevant to your analysis, such as effect size. 
+* You should also include any other statistics that you find relevant to your analysis, such as effect size.
 
 ### Blog Post Must-Haves
 
