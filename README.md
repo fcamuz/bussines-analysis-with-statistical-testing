@@ -6,7 +6,7 @@ The goal of this project is to do statistical analysis and hypothesis testing to
 Nortwind Dataset
 
 ## Metodology:
-Scintific Method
+Scientific Method
 
 ## Question
 
