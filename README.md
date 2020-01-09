@@ -76,7 +76,7 @@ Statistical tests that performed in this project:
 Python libraries used for this project:
 sqlalchemy, statmodels, itertools, pandas, numpy, stats from scipy, matplotlib, seaborn
 
-## Project Summary & Code Highlishts
+## Project Summary & Code Highlights
 
 I only query the data parts that I will use as a good practice of reducing the load for the processor. Since SQL is a lot faster than Pyhton in data processing, I also did filtering and extracting data in SQL query as much as I can.
 
