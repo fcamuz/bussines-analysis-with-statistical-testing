@@ -20,18 +20,11 @@ The general structure of an experiment is as follows:
 
 1. Make an Observation and Come up with the Question
 
-The first step of the scientific method is to observe something that you want to test. During this step, you must observe phenomena to help refine the question that you want to answer.
+The first step of the scientific method is to observe something that you want to test. 
 
 2. Examine the Data
 
 In statistics, exploratory data analysis (EDA) is an approach to analyzing data sets to summarize their main characteristics, often with visual methods. A statistical model can be used or not, but primarily EDA is for seeing what the data can tell us beyond the formal modeling or hypothesis testing task. The main pillars of EDA are data cleaning, data preparation, data exploration, and data visualization. 
-
-The particular graphical techniques employed in EDA are often quite simple, consisting of various techniques of: 
-Plotting the raw data (such as data traces, histograms, bihistograms, probability plots, lag plots, block plots, and Youden plots.
-
-Plotting simple statistics such as mean plots, standard deviation plots, box plots, and main effects plots of the raw data.
-
-Positioning such plots so as to maximize our natural pattern-recognition abilities, such as using multiple plots per page.
 
 3. Form a Hypothesis
 
@@ -39,15 +32,15 @@ During this stage, you'll formulate 2 hypotheses to test--your educated guess ab
 
 4. Run the Test
 
-This step is the part of the scientific method that will be the focus of this section. You can only test a hypothesis by gathering data from a well-structured experiment.You must pick the right test for you case. Moreover, each staistical test has a set of assumptions to be considered accurate. Make sure those assumptions are met and run the test.
+This step is the part of the scientific method that will be the focus of this section. You must pick the right test for you case. Moreover, each staistical test has a set of assumptions to be considered accurate. Make sure those assumptions are met and run the test.
 
 5. Analyze Experimental Results
 
-During this step, you will tease out relationships, filter out noise, and try to determine if something that happened is statistically significant or not. Depend on the test result, you will compare t, f,z, mostly p value with the alpha value to come up with conclusions.
+During this step, you will tease out relationships, filter out noise, and try to determine if something that happened is statistically significant or not. Depend on the test result, you will compare t,f,z, mostly p value with the alpha value to come up with conclusions.
 
 6. Draw Conclusions
 
-This step is the logical endpoint for an experiment. You've asked a question, looked at experimental results from others that could be related to your question, made an educated guess, designed an experiment, collected data and analyzed the results. The reality of this step is that you use your analysis of the data to do one of two things: either reject the null hypothesis or fail to reject the null hypothesis.
+You've asked a question, looked at experimental results from others that could be related to your question, made an educated guess, designed an experiment, collected data and analyzed the results. The reality of this step is that you use your analysis of the data to do one of two things: either reject the null hypothesis or fail to reject the null hypothesis.
 
 
 ![img](https://github.com/fcamuz/bussines-analysis-with-statistical-testing/blob/master/images/new_the-scientific-method.png)
