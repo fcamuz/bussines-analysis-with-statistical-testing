@@ -1,3 +1,5 @@
+![Download Dataset](https://github.com/fcamuz/bussines-analysis-with-statistical-testing/blob/master/images/title.png)
+
 # Bussiness Analysis with Statistical Testing
 
 The goal of this project is to do statistical analysis and hypothesis testing to generate valuable analytical insights for the company. 
@@ -79,16 +81,13 @@ Statistical tests that performed in this project:
 
 ## Libraries
 Python libraries used for this project:
+sqlalchemy, statmodels, itertools, pandas, numpy, stats from scipy, matplotlib, seaborn
 
-
-## Conclusion
-sqlalchemy, statmodels, itertools, pandas, numpy, stats from scipy, matplotlib, seaborn, 
-
-## Highlights from the code 
+## Project Summary & Code Highlishts
 
 I only query the data parts that I will use as a good practice of reducing the load for the processor. Since SQL is a lot faster than Pyhton in data processing, I also did filtering and extracting data in SQL query as much as I can.
 
-### Create engine to connect to Database and send queries 
+### Creating engine to connect to Database and send queries 
 
 ```python
 # connecting to the Database using SQLAlchemy
@@ -216,7 +215,7 @@ Discount    False
 Quantity    False
 dtype: bool
 
-### Performing Welch's t-test
+#### Performing Welch's t-test
 ```python
 from scipy import stats​
 stats.ttest_ind(disc.Quantity, non_disc.Quantity, equal_var=False)
@@ -227,7 +226,7 @@ Ttest_indResult(statistic=6.511219067380875, pvalue=1.0051255540843165e-10)
 
 P _value is very small (1.7401995278127614e-11), it is safe to reject the null hypothesis suggesting the alternative. We can say that the discount has a statistically significant effect on the quantity average of the product in an order. But we do not know how much of a difference it makes. To figure that out, let's check the effect size.
 
-### Effect Size
+#### Effect Size
 ```python
 Cohen_d(disc.Quantity,non_disc.Quantity)
 0.2997078720940889
@@ -284,7 +283,7 @@ product_order = pd.read_sql_query('''
 product_order.head()
 ```
 
-### Extracting the number of units in a bulk
+#### Extracting the number of units in a bulk
 The number of units are the first number in the string until the space however, there was one exception that caused error. I spotted that and add an if statement to catch it an convert it to a number manually.
 
 ```python
@@ -335,7 +334,7 @@ As it shows on the left chart, all discount levels increase the sale amount. How
  According to this data, I would suggest to stick with the 5% and 25% discounts. 
 5% discount exceptionally works well for making more sale and more profit. 
 
-# Question 3
+## Question 3
 
 3.1 - Does the employee's generation effect the average quantity of products sold?
 3.2 - Retrieve the data and perform EDA
@@ -425,7 +424,7 @@ We also observe experienced employees perform slightly better than the less expe
 I would suggest mentorship program among the employees to support the young ones to catch up with the others. 
 
 
-# Question 4
+## Question 4
 4.1 - Does the revenue of dairy product (cheese) differs by any combination of region and the time of the years?
 
 4.2 - Retrieve the data with SQL query
@@ -452,7 +451,7 @@ data = pd.read_sql_query('''
 
 
 
-## 4.3 Hypothesis
+### 4.3 Hypothesis
 
 Main effect of factor A ("Order Region"):
 
@@ -471,7 +470,7 @@ Factor A x factor B interactions:
 I set my significance level (Alpha): 0.05
 𝛼 = 0.05
 
-## 4.4 Statistical Analysis
+### 4.4 Statistical Analysis
 
 The two-way ANOVA examines the effect of two factors (month and region) on a dependent variable – in this case revenue, and also examines whether the two factors affect each other to influence the continuous variable.
 
@@ -501,9 +500,10 @@ The sample sizes for the groups are equal and greater than 10
 In general, as long as the sample sizes are equal (called a balanced model) and sufficiently large, the normality assumption can be violated provided the samples are symmetrical or at least similar in shape (e.g. all are negatively skewed).
 
 
-Normality Check
-Equal Variances Check
-​Performing two-way ANOVA Test
+#### Normality Check
+#### Equal Variances Check
+
+#### Performing two-way ANOVA Test
 ```python
 formula = 'Revenue ~ C(Region)*C(OrderMonth)'
 lm2 = ols(formula, data).fit()
@@ -516,7 +516,6 @@ C(OrderMonth)            3.794354e+05   11.0  0.086607  0.999906
 C(Region):C(OrderMonth)  1.961990e+07   88.0  0.559783  0.997149
 Residual                 1.059440e+08  266.0       NaN       NaN
 ```
-
 
 By looking at the p value, we fail to reject null hypothesis for factor A ,C and Factor A and B interaction. That mean we can suggest that the average revenue for dairy products are not significantly different at anytime of the year and at any region. However, we can still look at those categories to see the small differences.
 
@@ -557,7 +556,7 @@ Averadly the largest volume of cheese sale happens in January
 
 
 
-## 4.6 - Further Research
+## Conclusion
 
 The reason for Eastern Europe having low orders should be investigated.
 Conclusions for all 4 tests
