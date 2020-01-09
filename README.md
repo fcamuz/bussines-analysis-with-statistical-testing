@@ -4,6 +4,13 @@
 
 The goal of this project is to do statistical analysis and hypothesis testing to generate valuable analytical insights for the company. 
 
+## Presentation
+
+You may watch the presentation for non-technical audience from the link below.
+
+https://www.youtube.com/watch?v=jx6wj43ZXaY
+
+
 ## Dataset:
 Nortwind Dataset
 
