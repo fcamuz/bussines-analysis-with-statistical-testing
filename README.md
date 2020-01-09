@@ -74,10 +74,10 @@ Statistical tests that performed in this project:
 - Welch's t-test
 - one-way Anova test
 - two-way Anova test
-- KS Test 
-- Shapiro Test
+- KS test 
+- Shapiro test
 - Cohen's d test
-- Tukey
+- Tukey’s HSD test
 
 ## Libraries
 Python libraries used for this project:
@@ -127,13 +127,7 @@ data = pd.read_sql_query('''SELECT Discount, Quantity
                             FROM OrderDetail
                             
                             ;''', engine)
-data.head()
-Discount	Quantity
-0	0.0	12
-1	0.0	10
-2	0.0	5
-3	0.0	9
-4	0.0	40
+
 ```
 ```python
 I want those columns to be grouped by and ordered by Discount levels.
@@ -146,22 +140,7 @@ discount_levels = pd.read_sql_query('''SELECT Discount, sum(Quantity) as Quantit
                             ;''', engine)
 discount_levels
 ```
-```           
-         
-Discount	Quantity
-0	0.00	28599
-1	0.01	2
-2	0.02	4
-3	0.03	5
-4	0.04	1
-5	0.05	5182
-6	0.06	2
-7	0.10	4366
-8	0.15	4456
-9	0.20	4351
-10	0.25	4349
 
-```
 
 This question explored in two steps. First I verified if there is a statisticaly significant difference between the orders have discount and the orders have not discount. Then I determined the effect of different levels of discounts.
 
@@ -175,7 +154,7 @@ This question explored in two steps. First I verified if there is a statisticaly
 𝐻1: Offering discount affects the average number of product in an order.
 
 𝐻0:𝜇𝑖≠𝜇𝑗
-I set my significance level (Alpha): 0.05
+
 𝛼 = 0.05
 
 ### 1.4 Statistical Analysis
@@ -191,6 +170,7 @@ The independent variable (IV) is categorical with at least two levels (groups)
 The dependent variable (DV) is continuous which is measured on an interval or ratio scale
 
 The distribution of the two groups should follow the normal distribution; 
+
 We can check the normality of a distribution with a few different method such KS Test or Shapiro Test. The first thing we need to do is import scipy.stats as stats and then test our assumptions. We can test the assumption of normality using the stats.shapiro(). The first value in the tuple is the W test statistic, and the second value is the p-value.
 
 #### Normality Check
@@ -204,16 +184,14 @@ stats.kstest(non_disc.Quantity, 'norm', args=(0,2))
 ​KstestResult(statistic=0.9187836569660197, pvalue=0.0)
 ```
 
-
 p_value is very small for both tests, so we can not say that the distribution is normal however when the sample size is sufficiently large, Welch's t-test can still perform well.
+
 #### Equal variance check 
 ```python
 #checkign if the variances are equal
 disc.std()==non_disc.std()
 ```
-Discount    False
-Quantity    False
-dtype: bool
+
 
 #### Performing Welch's t-test
 ```python
@@ -262,7 +240,6 @@ product = pd.read_sql_query('''SELECT *
                             FROM Product
                             LIMIT 11
                             ;''', engine)
-product
 ```
 
 
@@ -280,7 +257,6 @@ product_order = pd.read_sql_query('''
                                
                         
                                 ;''', engine)
-product_order.head()
 ```
 
 #### Extracting the number of units in a bulk
@@ -296,15 +272,6 @@ for i in range(len(product_order.QuantityPerUnit)):
    
      
 product_order['QuantityInBulk']= quantityinbulk
-product_order['QuantityInBulk'].head()
-0    10
-1    24
-2    12
-3    48
-4    36
-Name: QuantityInBulk, dtype: int64
-product_order.head()
-​
 ```
 
 ### 2.3 Hypothesis
@@ -321,9 +288,11 @@ I set my significance level (Alpha): 0.05
 ### 2.4 Statistical Analysis
 Welch’s t-test is a nonparametric univariate test that tests for a significant difference between the mean of two unrelated groups. It is an alternative to the independent t-test when there is a violation in the assumption of equality of variances. In our case we have slighly different variences so I will use Welch's t-test. With this close standart deviation, probably, Student's t-test would also be ok but let's go by Welch's t-test beacuse, it is also best for the categorical indipendant variables.
 
-Welch’s t-test Assumptions check 
-Welch's t-test
-EEffect Size
+#### Welch’s t-test Assumptions check
+
+#### Performing Welch's t-test
+
+#### Effect Size
 
 
 ![img](https://github.com/fcamuz/bussines-analysis-with-statistical-testing/blob/master/images/Slide5.png)
@@ -331,6 +300,7 @@ EEffect Size
 
 These 2  charts show the effects of discount levels on quantity (on the left) and profit (on the right) , comparing to the sales with no discount. 
 As it shows on the left chart, all discount levels increase the sale amount. However,  for 10%, 15% and 20% discounts, the sale amount increases but that amount of sale does not compensate the decreased price (as you can see on the left chart). So the company makes less money than they would have made without discount. Simply put, if no (10, 15, 20% ) discount would have applied, company would sell less product but make more profit.  
+
  According to this data, I would suggest to stick with the 5% and 25% discounts. 
 5% discount exceptionally works well for making more sale and more profit. 
 
@@ -348,7 +318,7 @@ for i in range(len(birthday.BirthDate)):
         birth_year.append(int(birthday.BirthDate[i].split('-', 1)[0]))
 ```
 
-#### labeling generations
+#### Labeling generations
 ```python
 
 generations=[]
@@ -383,20 +353,20 @@ I set my significance level (Alpha): 0.05
 
 The one-way ANOVA compares the means between the groups you are interested in and determines whether any of those means are statistically significantly different from each other. If, however, the one-way ANOVA returns a statistically significant result, we accept the alternative hypothesis (HA), which is that there are at least two group means that are statistically significantly different from each other. So ANOVA would be good for this situation.
 
-ANOVA Assumptions
-Each group sample is drawn from a normally distributed population
-All populations have a common variance
-All samples are drawn independently of each other
-Within each sample, the observations are sampled randomly and independently of each other
-Factor effects are additive
-The presence of outliers can also cause problems. In addition, we need to make sure that the F statistic is well behaved. In particular, the F statistic is relatively robust to violations of normality provided:
+#### ANOVA Assumptions
+- Each group sample is drawn from a normally distributed population
+- All populations have a common variance
+- All samples are drawn independently of each other
+- Within each sample, the observations are sampled randomly and independently of each other
+- Factor effects are additive
+- The presence of outliers can also cause problems. In addition, we need to make sure that the F statistic is well behaved. In particular, the F statistic is relatively robust to violations of normality provided
+- The populations are symmetrical and uni-modal
+- The sample sizes for the groups are equal and greater than 10
 
-The populations are symmetrical and uni-modal.
-The sample sizes for the groups are equal and greater than 10
 In general, as long as the sample sizes are equal (called a balanced model) and sufficiently large, the normality assumption can be violated provided the samples are symmetrical or at least similar in shape (e.g. all are negatively skewed).
 
-Normality Check
-Equal Variances Check
+#### Normality Check
+#### Equal Variances Check
 ```python
 # using Levene’s test to test for equal variances between groups
 stats.levene(birthday['Quantity'][birthday['Generation'] == "Millennial"],
@@ -405,7 +375,7 @@ stats.levene(birthday['Quantity'][birthday['Generation'] == "Millennial"],
 LeveneResult(statistic=0.06774940223865293, pvalue=0.9344966195919657)
 ​
 ```
-Performing One-way ANOVA
+#### Performing One-way ANOVA
 ​
 ```python
 formula = 'Quantity ~ C(Generation)'
@@ -441,15 +411,10 @@ data = pd.read_sql_query('''
                             JOIN [Order] o ON od.OrderId = o.Id
                             JOIN Customer c ON o.CustomerId = c.Id
 ​
-                            WHERE p.CategoryId=4
-                            
-                          
-                                    
+                            WHERE p.CategoryId=4 
                         ;''', engine)
 ​
 ```
-
-
 
 ### 4.3 Hypothesis
 
@@ -474,32 +439,7 @@ I set my significance level (Alpha): 0.05
 
 The two-way ANOVA examines the effect of two factors (month and region) on a dependent variable – in this case revenue, and also examines whether the two factors affect each other to influence the continuous variable.
 
-ANOVA Assumptions
-
-Each group sample is drawn from a normally distributed population
-
-All populations have a common variance
-
-All samples are drawn independently of each other
-
-Within each sample, the observations are sampled randomly and independently of each other
-
-Factor effects are additive
-
-Dependent variable should be continuous
-
-Independent variables should be in categorical, independent groups
-
-The presence of outliers can also cause problems. In addition, we need to make sure that the F statistic is well behaved. In particular, the F statistic is relatively robust to violations of normality provided:
-
-
-The populations are symmetrical and uni-modal.
-
-The sample sizes for the groups are equal and greater than 10
-
-In general, as long as the sample sizes are equal (called a balanced model) and sufficiently large, the normality assumption can be violated provided the samples are symmetrical or at least similar in shape (e.g. all are negatively skewed).
-
-
+#### ANOVA Assumptions
 #### Normality Check
 #### Equal Variances Check
 
@@ -540,11 +480,8 @@ import statsmodels.stats.multicomp
 # for comparing the product categories, we use visualizations
 posthoc = statsmodels.stats.multicomp.MultiComparison(data['Revenue'], data['Region'])
 posthoc_results = posthoc.tukeyhsd()
-print('\n', posthoc_results)
-​
+print('\n', posthoc_results)​
 ```
-​
-
 
 According to ANOVA tests result, we fail to reject the null hypothesis. So, neither region nor the time of the year does not effect the average revanue from dairy product significantly.
 
@@ -553,8 +490,6 @@ The company can invest on advertising so that it attracts more customer without 
 Western Europe region had the most number of orders and the largest revenue.
 Eastern Europe region are lowest on cheese sale.
 Averadly the largest volume of cheese sale happens in January
-
-
 
 ## Conclusion
 
