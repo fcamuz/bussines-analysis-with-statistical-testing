@@ -6,7 +6,7 @@ The goal of this project is to do statistical analysis and hypothesis testing to
  
 
 ## Dataset:
-Nortwind Dataset
+Northwind Dataset
 
 ![img](https://github.com/fcamuz/bussines-analysis-with-statistical-testing/blob/master/images/Northwind_ERD.png)
 
@@ -40,11 +40,6 @@ During this step, you will tease out relationships, filter out noise, and try to
 6. Draw Conclusions
 
 You've asked a question, looked at experimental results from others that could be related to your question, made an educated guess, designed an experiment, collected data and analyzed the results. The reality of this step is that you use your analysis of the data to do one of two things: either reject the null hypothesis or fail to reject the null hypothesis.
-
-
-![img](https://github.com/fcamuz/bussines-analysis-with-statistical-testing/blob/master/images/new_the-scientific-method.png)
-
-
 
 ## Steps  
 - Question
@@ -149,10 +144,10 @@ ax2 = byregion.plot.barh( y='Quantity', rot=0)
 bymonth=data.groupby(['OrderMonth']).sum()
 ax2 = bymonth.plot.bar( y='Quantity', rot=0 )
 ```
-![img](https://github.com/fcamuz/bussines-analysis-with-statistical-testing/blob/master/images/img2img2.png)
+![img](https://github.com/fcamuz/bussines-analysis-with-statistical-testing/blob/master/images/img2.png)
 
 
-### 4.3 Hypothesis
+### Hypothesis
 
 Main effect of factor A ("Order Region"):
 
@@ -171,7 +166,7 @@ Factor A x factor B interactions:
 I set my significance level (Alpha): 0.05
 𝛼 = 0.05
 
-### 4.4 Statistical Analysis
+### Statistical Analysis
 
 The two-way ANOVA examines the effect of two factors (month and region) on a dependent variable – in this case revenue, and also examines whether the two factors affect each other to influence the continuous variable.
 
