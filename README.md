@@ -200,8 +200,6 @@ stats.ttest_ind(disc.Quantity, non_disc.Quantity, equal_var=False)
 ​
 Ttest_indResult(statistic=6.511219067380875, pvalue=1.0051255540843165e-10)
 ```
-
-
 P _value is very small (1.7401995278127614e-11), it is safe to reject the null hypothesis suggesting the alternative. We can say that the discount has a statistically significant effect on the quantity average of the product in an order. But we do not know how much of a difference it makes. To figure that out, let's check the effect size.
 
 #### Effect Size
